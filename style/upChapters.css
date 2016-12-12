@@ -1,0 +1,36 @@
+.navbar {
+  position: relative;
+}
+body {
+  background: white;
+}
+#upchap-story-title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+}
+#upchap-name {
+  font-size: 18px;
+  text-align: center;
+}
+#upchap-input {
+  width: 15%;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	border-bottom: 1px solid #bfbfbf;
+}
+#upchap-body {
+  margin-top: 20px;
+}
+#upchap-body textarea {
+  border:none;
+  font-size: 20px;
+}
+#upchap-submit {
+  text-align: center;
+}
+#upchap-submit input {
+  font-size: 20px;
+  margin-bottom: 20px;
+}

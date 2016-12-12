@@ -1,0 +1,148 @@
+var covers = [];
+// var covers = [
+// 	{
+// 		"id": "1161022966406956503",
+// 		"title": "Đế Bá",
+// 		"author": "Yếm Bút Tiêu Sinh",
+// 		"genre": "TIÊN HIỆP",
+// 		"chapters": "11",
+// 		"status": "Đang cập nhật",
+// 		"view": "1236",
+// 		"intro": "Ngàn vạn năm trước, Lý Thất Dạ trồng xuống một cây Thúy Trúc.<br>Tám trăm vạn năm trước, Lý Thất Dạ nuôi một đầu cá chép.<br>Năm trăm vạn năm trước, Lý Thất Dạ thu dưỡng một cái tiểu cô nương.<br>... ... ... ... ...<br>Hôm nay, Lý Thất Dạ tỉnh lại sau giấc ngủ, Thúy Trúc tu luyện thành thần linh, cá chép hóa thành Kim Long, tiểu cô nương trở thành Cửu Giới Nữ Đế.<br>Đây là một cái dưỡng thành cố sự, một cái bất tử Nhân tộc tiểu tử dưỡng thành Yêu Thần, dưỡng thành Tiên thú, dưỡng thành Nữ Đế cố sự.",
+// 		"display_src": "./cover-img/photo01.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1160844458347054781",
+// 		"title": "Bất Hủ Phàm Nhân",
+// 		"author": "Ta Là Lão Ngũ",
+// 		"genre": "XUYÊN KHÔNG",
+// 		"chapters": "5",
+// 		"status": "Đang cập nhật",
+// 		"view": "492",
+// 		"intro": "Ta, chỉ có phàm căn, một kẻ phàm nhân!<br>Ta, gọi Mạc Vô Kỵ!<br>Ta, muốn Bất Hủ!",
+// 		"display_src": "./cover-img/photo02.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1154606670337393752",
+// 		"title": "Thần Điêu Phong Vân",
+// 		"author": "Vũ Trụ Lãng Tử",
+// 		"genre": "KIẾM HIỆP",
+// 		"chapters": "15",
+// 		"status": "Hoàn thành",
+// 		"view": "1924",
+// 		"intro": "Truyện Thần Điêu Phong Vân nói về Lý Hổ - một cao thủ kiếm hiệp Hình Ý hiện đại, sau khi trọng sinh được đưa đến thế giới thần điêu hiệp lữ, với thân thế là một tên hoa hoa hòa thượng, hắn dùng hiện đại Hình Ý quyền, cùng Thiếu Lâm kim chung tráo, kết hợp với cổ mộ khinh công... hắn trờ nên vô địch, và như thế, 1 tà hiệp lại sinh ra.<br>- Tất cả các nhân vật ngôn tình trong thần điêu hiệp lữ đều xuất hiện, thậm chí cả Ngưu Ma Vương và Thiết Phiến Công Chúa trong Tây Du Ký cũng trọng sinh. Nhưng liệu Lí Hổ có thay đổi mọi chuyện nhờ võ công siêu quần và kiến thức hiện đại, bao nhiêu mỹ nữ sẽ về hậu cung của hắn? Mời bạn đọc cùng xem sẽ rõ.<br>- Tiểu Long Nữ: Hắn rất xấu rồi, đem Doãn Chí Bình biến thành thái giám, chính mình lại lừa đi lên... Quách Phù: Hắn rất xấu rồi, rõ ràng biết người ta thích hắn còn chọc ghẹo ta, còn nói người ta thích tự ngược.<br>- Quách Tương: Hắn rất xấu rồi, người ta mới ra sinh ra được đối ta không có hảo ý, đối ta luôn thi triển tà ác kế hoạch.<br>- Công Tôn Lục Ngạc: Hắn rất xấu rồi, thế nhưng đem ta cả bố mẹ đều tức chết.<br>- Lí Mạc Sầu: Hắn rất xấu rồi, của ta hơn 30 năm kiên trì giữ tấm thân trong sạch, đều bị hắn bị hủy, còn mang trong mình cốt nhục của hắn.",
+// 		"display_src": "./cover-img/photo03.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1157179863266871229",
+// 		"title": "Đấu La Đại Lục",
+// 		"author": "Đường Gia Tam Thiểu",
+// 		"genre": "TIÊN HIỆP",
+// 		"chapters": "6",
+// 		"status": "Hoàn thành",
+// 		"view": "331335",
+// 		"intro": "Đấu La Đại Lục là một trong những tác phẩm đặc sắc của Đường Gia Tam Thiếu. Tác phẩm thuộc thể loại truyện Tiên Hiệp, mang đến cho độc giả một cái nhìn, một cảm nhận mới về thế giới hiệp khách huyền ảo.<br>Câu chuyện với nhân vật chính, con một thợ rèn, một thợ rèn trở thành tửu quỷ, vì thê tử đã mất, sẵn sàng lôi cuốn người đọc ngay từ những chương đầu tiên. Đấu La Thế Giới, một đại lục rộng lớn, cư dân đông đúc. Chức nghiệp cao quý nhật tại đây được gọi là Hồn Sư. Mỗi người sinh ra, đều có một vũ hồn bẩm sinh.<br>Vũ hồn có thể là cái cày, cái cuốc, liêm đao (liềm gặt)..thuộc khối công cụ, một đóa hoa cúc, một cành mai...thuộc thực vật hệ đến các vũ hồn cường đại như Tuyết Ảnh Ma Hùng, Tật Phong Ma Lang.... Để có thể trở thành hồn sư, ngoài vũ hồn cường đại, còn cần đến hồn lực để sử dụng vũ hồn đó, vũ hồn càng lớn, hồn lực càng cao, đại biểu cho thực lực mạnh mẽ tại Đấu la đại lục.<br>Cứ 10 cấp hồn lực, vũ hồn có thể phụ gia thêm một cái hồn hoàn, có được từ việc liệp sát hồn thú, những quái thú mạnh mẽ, có tu vị hằng nghìn năm. Hành trình tu luyện, tìm hiểu bí ẩn cái chết của mẫu thân, bị mật tông sư của phụ thân, câu chuyện sẽ cho người đọc những trải nghiệm thú vị.",
+// 		"display_src": "./cover-img/photo04.jpg",
+// 		"source": "tangthuvien.vn"
+// 	},
+// 	{
+// 		"id": "1126293663140399053",
+// 		"title": "Hệ Thống Dưỡng Thành Nữ Chủ",
+// 		"author": "Lăng Mộng Tiêu Nhiên",
+// 		"genre": "NGÔN TÌNH",
+// 		"chapters": "12",
+// 		"status": "Đang cập nhật",
+// 		"view": "33584",
+// 		"intro": "Làm giải phẫu ruột thừa mà cũng xuyên không.<br>Còn bất hạnh xuyên vào bộ tiểu thuyết hắc ám mạt thế chi Tô Nhuế nhân sinh.<br>Trở thành vật hi sinh nữ phụ.<br>Cùng tên, giống tướng mạo nhưng không đồng mệnh cùng còn bị nữ chủ Mary Sue thêm hắc ám hệ trở thành vật hi sinh.<br>Bất quá ta không sợ, ta có không gian cộng thêm dưỡng thành hệ thống, có thể ở mạt thế tạo nên sự nghiệp.<br>Thế nhưng có ai có thể nói cho ta biết yêu nghiệt kia dính một lần liền vứt đi không được. Cùng đọc truyện Hệ Thống Dưỡng Thành Nữ Chủ của tác giả Lăng Mộng Tiêu Nhiên để chiêu mộ nhé.",
+// 		"display_src": "./cover-img/photo05.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1117418173361145365",
+// 		"title": "Cực Phẩm Thái Tử Phi",
+// 		"author": "Viên Không Phá",
+// 		"genre": "XUYÊN KHÔNG",
+// 		"chapters": "15",
+// 		"status": "Hoàn Thành",
+// 		"view": "829",
+// 		"intro": "Ai nói làm nghề sơn tặc là không cao quý?<br>Sơn tặc cũng trở thành thái tử phi! ————————–Thái tử phi!<br>Nghe nói không cần lo ăn mặc, cộng thêm thủ hạ dưới trướng xếp hàng đàn, ồ ừm, có thể sẽ phải lo lắng, bất quá Hoàng hậu, phi tần trong hoàng cung này thật là phiền hà. Một người, hai người đều muốn cưỡi đầu cưỡi cổ mình, không cần phải nói, người lục đục với nhau, người không biết phân rõ phải trái, kẻ ỷ thế hiếp người, ta đánh hết… <br>Cái gì? Không thể đánh? Vô Lượng thần công của bản trại chủ chẳng lẽ lại là luyện không công? <br>Cái gì? Vẫn không thể đánh sao? Bớt nói nhảm đi, ta đánh! Ta mặc xác các ngươi có phải là Thái tử, Vương gia, Hoàng Hậu, Phi tần hay không? Địa bàn của ta do ta làm chủ, cho dù đây là hoàng cung, các ngươi cũng phải —— nghe theo ta",
+// 		"display_src": "./cover-img/photo06.jpg",
+// 		"source": "truyencv.com"
+// 	},
+// 	{
+// 		"id": "1217418173361145365",
+// 		"title": "Khuynh Thành Tiểu Độc Phi",
+// 		"author": "Bình Quả Trùng Tử",
+// 		"genre": "NGÔN TÌNH",
+// 		"chapters": "5",
+// 		"status": "Đang cập nhật",
+// 		"view": "829",
+// 		"intro": "Khác với Vân Khuynh Thiên Khuyết, truyện xuyên không nữ cường nói về Bạch Lạc Tuyết là đích nữ của Bàng Gia gả cho Tấn vương làm vương phi, 10 tháng mang thai đến ngày sinh lại bị sát hại bỏ mạng. Năm năm ân ái không sánh bằng ngôi vị hoàng đế, nhi tử chưa chào đời cùng bản thân nàng đã ở nơi hoàng tuyền.<br>Trùng sinh lại Bàng Lạc Tuyết thề với trời, muốn những kẻ đã hại nàng phải trả giá gấp trăm nghìn lần, nàng đã hiểu được kiếp trước mình chỉ là vật thế thân cho một cái bẫy hoàng đế. Kiếp trước khi nhục nàng, kiếp này nàng giẫm đạp dưới chân.<br>Thứ thiếp tâm cơ, lão thái thái tính tình cổ quái, chúng tỷ muội bắt nạt, nàng vui đùa trả lại.Nàng từng bước trù tính, cuộc đời này là do nàng quyết định, mời các bạn đón xem nàng sẽ trã thù như thế nào qua truyện Khuynh Thành Tiểu Độc Phi. ",
+// 		"display_src": "./cover-img/photo07.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1317418173361145365",
+// 		"title": "Chính Lăng Vương Phi",
+// 		"author": "Lãnh Nguyệt Dạ",
+// 		"genre": "NGÔN TÌNH",
+// 		"chapters": "5",
+// 		"status": "Đang cập nhật",
+// 		"view": "829",
+// 		"intro": "Hơn hai mươi năm trời sống trong tranh đấu. Từ lần đầu tiên Mạc Tử Liên nhìn thấy Đông Phương Thiên Trạch liền nhất kiến chung tình. Sau đó lại dùng hết thủ đoạn để vào được Tịnh Khiêm Vương Phủ làm thiếp của hắn. Tuy nhiên hắn vẫn luôn không đoái hoài, mặc cho nàng hết náo loạn rồi lại tranh đấu. Đùa giỡn trong vòng vây thủ đoạn suốt mười lăm năm, lê một thân đầy thương tích, bàn tay dính đầy máu tanh bẩn thỉu... Nàng ... thê lương cười. Tới giây phút cuối cùng mới nhận ra, thì ra nàng đã sống một cuộc đời vô nghĩa.<br>Được cơ hội sống lại sau khi trải qua mấy ngàn năm chịu trừng phạt, lại trọng sinh qua rất nhiều kiếp mà vẫn giữ nguyên trí nhớ khiến Mạc Tử Liên có thể nhìn rõ cuộc đời. Nàng quyết định buông tha hết thảy những oán niệm thù hận trong quá khứ, một lần nữa làm lại cuộc đời. Cuối cùng, nàng gặp hắn.<br>Một tựa truyện ngôn tình đầy nổi bật, đề cao tính nhân văn và tình yêu. Mời các bạn cùng khám phá.",
+// 		"display_src": "./cover-img/photo08.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1417418173361145365",
+// 		"title": "Xuyên Đến Nữ Tôn Quốc",
+// 		"author": "Lãnh Thiếu",
+// 		"genre": "XUYÊN KHÔNG",
+// 		"chapters": "4",
+// 		"status": "Đang cập nhật",
+// 		"view": "35",
+// 		"intro": "Xuyên Đến Nữ Tôn Quốc xoay quanh về cô - Phạm Hiểu Linh... một cuộc sống nếu không tính đến chuyện phải bươn trải kiếm tiền mệt mỏi, tự lực tự cường thì vô cùng thỏa mãn và hạnh phúc với bố mẹ, em trai yêu thương, cuộc sống tự do tự tại... đúng là cha mẹ đã được trời sinh một đôi, hai anh em cô đều nương tựa hết mực.<br>Nhưng trời không rõ lý do gì... vì một trận sốt khiến cô xuyên không qua. đến một nơi mọi thứ dường như ở quê nhà cô... chỉ khác nơi này nữ tử làm chủ, thú phu sinh con.<br>Truyện nàng mở mắt, phải lo cuộc sống cho bản thân và hai đệ đệ cùng người phu thị của mình. Nàng sẽ để cuộc sống bình bình đạm đạm trôi qua hay sẽ khiến mọi thứ điên đảo.",
+// 		"display_src": "./cover-img/photo09.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+// 	{
+// 		"id": "1517418173361145365",
+// 		"title": "Chân Linh Cửu Biến",
+// 		"author": "Thụy Thu",
+// 		"genre": "TIÊN HIỆP",
+// 		"chapters": "5",
+// 		"status": "Hoàn thành",
+// 		"view": "1305",
+// 		"intro": "Truyện kể về quá trình một tu sĩ phổ thông phấn đấu tu luyện, trưởng thành, bao gồm cả quá trình phát triển của một môn phái với bao quyền mưu, ám sát, chiến đấu, lợi ích và phấn đấu.<br>Đó là một tràng nhân yêu hai tộc đối kháng, rồi đại kiếp đến gần, để các bên hợp tung liên hoành tranh đấu cho sự tồn tại. <br>Trong truyện, tu sĩ Lục Bình đệ tử của Chân Linh phái chuyên tu thủy hệ công pháp những bằng nổ lực của mình đã từng bước thành công về luyện phù, luyện đan, tu thành thần thông giành lấy tiếng nói cho chính mình, chống lại những âm mưu đã ẩn giấu thâm sâu trong tu chân giới hàng vạn năm.",
+// 		"display_src": "./cover-img/photo10.jpg",
+// 		"source": "truyencv.com"
+// 	},
+// 	{
+// 		"id": "1617418173361145365",
+// 		"title": "Cực Phẩm Ăn Xin Cường Hãn",
+// 		"author": "LCP Team",
+// 		"genre": "KIẾM HIỆP",
+// 		"chapters": "5",
+// 		"status": "Hoàn thành",
+// 		"view": "1407",
+// 		"intro": "Hàn Nhật một cậu bé ăn xin sống trong Lưu Phúc trấn, cậu còn sống cùng một người bạn nữa là cô bé . Đến một ngày cô bé sống cùng cậu bị bắt đi bởi một môn phái. Vì để tìm được cô Hàn Nhật đã bước chân vào trốn phân tranh. Một con đường không thê quay về.<br>Ai có ngờ tên ăn xin ngày yếu ớt ngày đó lại trở lên mạnh mẽ.<br>Ai có thể ngờ tên ăn xin đó sau này lại đứng trên đỉnh cao cường giả.<br>Khi nghe tên hắn ai ai cũng kiếp sợ. Không một ai dám kinh thường nửa lời.<br>Hàn Nhật đã tự tạo ra một truyền thuyết của riêng mình.<br>Cùng đi với hắn để ta biết con đường hắn đi và tạo ra truyền thuyết về mình ra sao.<br>Cùng với thế Hàn Nhật cũng từ từ hé lộ tấm màn che về thân thế thực sự của cậu.",
+// 		"display_src": "./cover-img/photo11.jpg",
+// 		"source": "truyencv.com"
+// 	},
+// 	{
+// 		"id": "1717418173361145365",
+// 		"title": "Long Ngạo Thương Khung",
+// 		"author": "Vô Danh",
+// 		"genre": "KIẾM HIỆP",
+// 		"chapters": "5",
+// 		"status": "Hoàn thành",
+// 		"view": "89842",
+// 		"intro": "Thập Vạn Đại Sơn bao la bát ngát, từ trên cao nhìn xuống như một đại dương, núi cao vạn trượng, sương mù lượn lờ. Sâu trong Thập Vạn Đại Sơn, một hạp cốc nhỏ, trong này thiên địa linh khí nồng đậm, trên một đám cỏ có một con rắn nhỏ theo tiếng hít thở từng tia từng tia linh khí tiến vào trong thân vận chuyển một vòng, nó ngẩng đầu lên bầu trời trong xanh với ước ao khi thấy những con chim tự do bay bổng trên trời. Nó không có tự do, từ khi biết suy nghĩ đến nay nó chỉ ở trong hạp cốc, bên ngoài như có một vòng phòng hộ không cho phép bất cứ sinh vật nào ra hoặc vào. Ở trong này nó không cảm thấy đói, mệt, vì mỗi khi hô hấp nó lại cảm ứng được từng tia từng năng lượng vào trong thân thể và vận chuyển thì cảm giác đói khác biến mất, thân thể tràn đầy năng lượng.<br>Gió nhẹ chợt thổi qua mang theo một mùi hương thơm hấp dẫn, bừng tỉnh từ trong suy nghĩ, men theo hướng mùi thơm phát ra, một gốc cây chỉ cao chưa đến hai trượng, phía trên nhánh cây có một quả màu đỏ tươi, sáng bóng. Nó không biết đây là cây gì nhưng mà mùi hương của trái cây có sức hấp dẫn và có dụch vọng muốn nuốt ngay trái cây đó.<br>Chợt có tiếng xé gió từ xa truyền đến, nó ngẩng đầu lên mang theo sự nghi ngờ tại sao lại có sinh vật khác đến? Không phải vòng phòng hộ không cho phép sinh vật nào ra vào hay sao? Nghi ngờ nhưng nó vẫn tránh vào một bụi rậm để đề phòng cẩn thận. Long Khí cảnh, Long Dịch cảnh, Long Đan Cảnh, Long Anh cảnh, Hóa Long cảnh... Liệu còn gì đang đón chờ phía trước, còn gì tiếp nối nữa đây, bạn hãy đọc truyện để tìm câu trả lời, bạn cũng có thể đón đọc những truyện khác cùng thể loại như: Kiếm Đạo Độc Tôn, Quan Thuật,...",
+// 		"display_src": "./cover-img/photo12.jpg",
+// 		"source": "webtruyen.com"
+// 	},
+//
+// ];

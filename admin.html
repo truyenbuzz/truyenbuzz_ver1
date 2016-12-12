@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>BK Truyện</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" type="text/css" href="./style/admin.css">
+  <script src="lib/jquery/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <script src="./jquery-cookie/jquery.cookie.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="jquery.twbsPagination.min.js"></script>
+  <script src="./data/covers.js"></script>
+  <script src="./javascript/index.js"></script>
+  <script src="./javascript/listStories.js"></script>
+  <script src="./javascript/admin.js"></script>
+  <script src="./javascript/stories.js"></script>
+  <script src="./javascript/editStories.js"></script>
+
+</head>
+<body>
+  <ul class="tab">
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Quản lý thành viên</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Paris')">Quản lý truyện</a></li>
+    <li><a href="javascript:void(0)" class="tablinks" onclick="openCity(event, 'Tokyo')">Đăng truyện</a></li>
+  </ul>
+
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <h3>Chỉnh sửa truyện</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 padding">
+            <form method="post" id="edit-form" enctype="multipart/form-data">
+              <div class="col-md-4">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 edit-cover">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="edit-id" name="edit-id" readonly />
+                  </div>
+
+                  <img src="./logo/upload-cover-photo.png" id="edit-previewHolder" alt="Cover photo"/> <br />
+                  <label class="btn btn-success btn-file">
+                    Chọn ảnh bìa <input type="file" id="edit-image" accept="image/*" name="edit-image" onchange="readEditURL(this)">
+                  </label> <br />
+
+                  <span id="edit-img-mess"></span>
+                </div>
+              </div>
+
+              <div class="col-md-8 form-border">
+                <div class="form-group">
+                  <label class="edit-title-label" for="edit-title">Truyện</label>
+                  <input type="text" class="form-control" id="edit-title" name="edit-title" placeholder="Nhập tên truyện" required/>
+                  <span id="edit-title-mess"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="edit-title-label" for="edit-author">Tác giả</label>
+                  <input type="text" class="form-control" id="edit-author" name="edit-author" placeholder="Nhập tên tác giả" required/>
+                  <span id="edit-author-mess"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="edit-genre-label edit-title-label" for="edit-genre">Thể loại</label>
+                  <select id="edit-genre" name="edit-genre" required>
+                    <option disabled selected class="hideoption" value="">Chọn thể loại truyện</option>
+                    <option>TIÊN HIỆP</option>
+                    <option>XUYÊN KHÔNG</option>
+                    <option>NGÔN TÌNH</option>
+                    <option>KIẾM HIỆP</option>
+                  </select>
+                  <span id="edit-genre-mess"></span>
+                </div>
+
+                <div class="form-group">
+                  <label class="edit-title-label" for="edit-intro">Giới thiệu</label>
+                  <textarea class="form-control" rows="10" id="edit-intro" name="edit-intro" placeholder="Giới thiệu truyện, không quá 2000 ký tự"></textarea>
+                  <span id="edit-intro-mess"></span>
+                </div>
+
+                <div class="edit-submit-button">
+                  <input class="btn btn-success" type="submit" value="Xác nhận"/>
+                  <a id="addChap" href="">thêm chương</a>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="myNav-editChap" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <h3>Chỉnh sửa chương</h3>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 padding">
+            <!-- LIST OF CHAPTERS HERE-->
+            <ul id="admin-listChap">
+              <!-- <li>
+              <a>Chương 1</a>
+            </li>
+            <li>
+            <a>Chương 1</a>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div id="London" class="tabcontent">
+  <div class="table-responsive">
+    <h3>Danh sách thành viên</h3>
+    <table id="user-table" class="table table-hover table-bordered admin-page-table">
+      <tr>
+        <td class="th">ID</td>
+        <td class="th">Tên đại diện</td>
+        <td class="th">Email</td>
+        <td class="th">Số điện thoại</td>
+        <td class="th">Ngày sinh</td>
+        <td class="th">Vai trò</td>
+        <td class="th">Xóa thành viên</td>
+
+      </tr>
+      <!-- <tr>
+      <td class="tb">581969e99b696</td>
+      <td class="tb">triphamtran</td>
+      <td class="tb">a@a.com</td>
+      <td class="tb">01225417247</td>
+      <td class="tb">21</td>
+      <td class="tb"><button><i class="glyphicon glyphicon-remove"></i></button></td>
+    </tr> -->
+  </table>
+</div>
+<hr/>
+
+<div class="table-responsive">
+  <h3>Danh sách quản trị viên</h3>
+  <table id="admin-table" class="table table-hover table-bordered admin-page-table">
+    <tr>
+      <td class="th">ID</td>
+      <td class="th">Tên đại diện</td>
+      <td class="th">Email</td>
+      <td class="th">Số điện thoại</td>
+      <td class="th">Ngày sinh</td>
+      <td class="th">Vai trò</td>
+    </tr>
+
+    <!-- <tr>
+    <td class="tb">581969e99b696</td>
+    <td class="tb">triphamtran</td>
+    <td class="tb">a@a.com</td>
+    <td class="tb">01225417247</td>
+    <td class="tb">21</td>
+  </tr> -->
+</table>
+</div>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <div class="table-responsive">
+    <h3>Danh sách truyện</h3>
+    <table id="story-table" class="table table-hover table-bordered">
+      <tr>
+        <td class="th">ID</td>
+        <td class="th">Tên</td>
+        <td class="th">Chương</td>
+        <td class="th">Lượt xem</td>
+        <td class="th">Trạng thái</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Đăng truyện</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 padding">
+        <form method="post" id="up-form" enctype="multipart/form-data">
+          <div class="col-md-4">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 up-cover">
+              <img src="./logo/upload-cover-photo.png" id="previewHolder" alt="Cover photo"/> <br />
+              <label class="btn btn-success btn-file">
+                Chọn ảnh bìa <input type="file" id="uploadImage" accept="image/*" name="image" onchange="readURL(this)">
+              </label> <br />
+              <span id="up-img-mess"></span>
+            </div>
+          </div>
+
+          <div class="col-md-8 form-border">
+            <div class="form-group">
+              <label class="edit-title-label" for="up-title">Truyện</label>
+              <input type="text" class="form-control" id="up-title" name="up-title" placeholder="Nhập tên truyện" required/>
+              <span id="up-title-mess"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="edit-title-label" for="up-author">Tác giả</label>
+              <input type="text" class="form-control" id="up-author" name="up-author" placeholder="Nhập tên tác giả" required/>
+              <span id="up-author-mess"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="edit-genre-label edit-title-label" for="up-genre">Thể loại</label>
+              <select id="up-genre" name="up-genre" required>
+                <option disabled selected class="hideoption" value="">Chọn thể loại truyện</option>
+                <option>TIÊN HIỆP</option>
+                <option>XUYÊN KHÔNG</option>
+                <option>NGÔN TÌNH</option>
+                <option>KIẾM HIỆP</option>
+              </select>
+              <span id="up-genre-mess"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="edit-title-label" for="up-intro">Giới thiệu</label>
+              <textarea class="form-control" rows="10" id="up-intro" name="up-intro" placeholder="Giới thiệu truyện, không quá 2000 ký tự"></textarea>
+              <span id="up-intro-mess"></span>
+            </div>
+
+            <div class="edit-submit-button">
+              <input class="btn btn-success" type="submit" value="Xác nhận"/>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

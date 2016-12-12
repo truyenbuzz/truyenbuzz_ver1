@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>BK Truyện</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" type="text/css" href="./style/upChapters.css">
+
+  <script src="lib/jquery/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <script src="./jquery-cookie/jquery.cookie.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="jquery.twbsPagination.min.js"></script>
+  <script src="./data/covers.js"></script>
+  <script src="./javascript/single.js"></script>
+  <script src="./javascript/index.js"></script>
+  <script src="./javascript/upChapters.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">BK Truyện</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html"><i class="glyphicon glyphicon-home nav-icon"></i>  Trang chủ</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-align-left nav-icon"></i>  Thể loại <span class="caret"></span></a>
+            <ul class="dropdown-menu genre-menu">
+              <!-- COVER'S GENRE DROPDOWN HERE-->
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li id="nav-login">
+          </li>
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search nav-icon nav-search-size"></span></a>
+            <ul class="dropdown-menu search-menu">
+              <li>
+                <form onsubmit="return searchStories();">
+                  <div class="search-form">
+                    <input type="text" id="search-input" name="search" placeholder="Truyện bạn muốn tìm" onkeyup="showHint(replaceStr(this.value))">
+                    <input type="submit" class="btn btn-primary button-search" name="Search" value="Search">
+                  </div>
+                  <div class="hint-form">
+                    <div class="row hint_data">
+                    </div>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <form id="upchap-form" method="post" onsubmit="return handleUpSubmit();">
+        <div id="upchap-wrap" class="col-md-12 col-sm-12 col-xs-12">
+          <header id="upchap-story-title"> <!-- TITLE HERE --></header>
+          <div id="upchap-name"><span><!-- CHAPTER HERE --> </span><input type="text" id="upchap-input" required placeholder="Nhập tên chương"/></div>
+        </div>
+
+        <div id="upchap-body" class="col-md-12 col-sm-12 col-xs-12">``
+          <div class="form-group">
+            <textarea id="upchap-content" class="form-control" rows="50" placeholder="Nội dung chương" required></textarea>
+          </div>
+        </div>
+
+        <div id="upchap-submit" class="col-md-12 col-sm-12 col-xs-12">
+          <input class="btn btn-warning" type="submit" value="Lưu bài"/>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h3>Giới thiệu</h3>
+          <hr>
+          <span>BK Truyện là website đọc truyện convert online cập nhật liên tục và nhanh nhất các truyện tiên hiệp, kiếm hiệp, huyền ảo do các thành viên đóng góp, có nhiều truyện hay và nổi bật</span>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h3>Liên hệ</h3>
+          <hr>
+          <a href="about.html"><i class="glyphicon glyphicon-book"></i> About us</a> <br>
+          <span><i class="glyphicon glyphicon-envelope"></i> 51304364@hcmut.edu.vn</span>
+          <br>
+          <span><i class="glyphicon glyphicon-phone"></i> 01225417247</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

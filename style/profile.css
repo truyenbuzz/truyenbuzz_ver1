@@ -1,0 +1,129 @@
+.navbar {
+    position: relative;
+}
+
+div {
+    display: block;
+}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+ul.tab li {
+    float: left;
+    width: 50%;
+}
+
+ul.tab li a {
+    width: 100%;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+#profile-form #profile-left {
+    float: left;
+}
+
+img #profile-pic {
+    border-radius: 72.5px;
+}
+
+#profile-pic {
+    height: 60%;
+    width: 60%;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#profile-form #profile-left input {
+    width: 60%;
+}
+
+.change {
+    font-size: 18px;
+    height: 40px;
+    background-color: #57b7df;
+    padding: 4px 15px;
+}
+
+#profile-main {
+    position: relative;
+}
+
+#profile-main label {
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    line-height: 10px;
+    display: block;
+}
+
+#profile-main input {
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid black;
+    height: 35px;
+    padding: 0 10px;
+}
+
+.error {
+    color: red;
+}
+
+#profile-field div {
+    display: block;
+}
+
+#image {
+    display:none;
+}
+
+#field-submit input {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    color: white;
+    width: 30%;
+}
+.favo-cont .row{
+  margin-bottom: 20px;
+}
+#profile-wrap{
+  margin: 20px auto;
+}
+.favo-cont .row a{
+  text-decoration: none;
+  color: #4D4D4D;
+}
+.favo-cont .row a:hover{
+  text-decoration: none;
+}
+.favo-cont .row:hover {
+  background-color: #E6E6E6;
+}

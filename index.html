@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>BK Truyện</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" type="text/css" href="./style/hint.css">
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="./jquery-cookie/jquery.cookie.js"></script>
+  <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="jquery.twbsPagination.min.js"></script>
+  <script src="./data/covers.js"></script>
+  <script src="./javascript/hint.js"></script>
+  <script src="./javascript/index.js"></script>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">BK Truyện</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html"><i class="glyphicon glyphicon-home nav-icon"></i>  Trang chủ</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-align-left nav-icon"></i>  Thể loại <span class="caret"></span></a>
+            <ul class="dropdown-menu genre-menu">
+              <!-- COVER'S GENRE DROPDOWN HERE-->
+            </ul>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="nav-login">
+          </li>
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search nav-icon nav-search-size"></span></a>
+            <ul class="dropdown-menu search-menu">
+              <li>
+                <form onsubmit="return searchStories();">
+                  <div class="search-form">
+                    <input type="text" id="search-input" name="search" placeholder="Truyện bạn muốn tìm" onkeyup="showHint(replaceStr(this.value))">
+                    <input type="submit" class="btn btn-primary button-search" name="Search" value="Search">
+                  </div>
+                  <div class="hint-form">
+                    <div class="row hint_data">
+                    </div>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header-img" style="height: 620px; margin-bottom: 20px;"> <!--  -->
+    <img src="./slide-img/photo03.jpg" style="width: 100%; height: 620px;" alt="No">
+    <!-- <img src="./logo/download.png" style="width: 100%; height: 620px;"> -->
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-sm-8 col-xs-12 test">
+        <header class="main-header">Truyện mới cập nhật</header>
+        <div class="col-md-4 col-xs-12 col-sm-6">
+          <div id="left" class="col-md-12">
+            <!--    COVERS GO HERE    -->
+
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-6">
+          <div id="middle" class="col-md-12">
+            <!--    COVERS GO HERE    -->
+          </div>
+        </div>
+        <div class="col-md-4 col-xs-12 col-sm-6">
+          <div id="right" class="col-md-12">
+            <!--    COVERS GO HERE    -->
+          </div>
+        </div>
+        <div class="col-md-12">
+          <ul id="pagination-demo" class="pagination pagination-sm">
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 col-xs-12 padding-right">
+        <div class="col-md-12 col-sm-12 col-xs-12 padding recmt-wrap">
+          <div class="col-md-12 padding recmt-header">
+            <header>Truyện đề cử</header>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h3>Giới thiệu</h3>
+          <hr>
+          <span>BK Truyện là website đọc truyện convert online cập nhật liên tục và nhanh nhất các truyện tiên hiệp, kiếm hiệp, huyền ảo do các thành viên đóng góp, có nhiều truyện hay và nổi bật</span>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h3>Liên hệ</h3>
+          <hr>
+          <a href="about.html"><i class="glyphicon glyphicon-book"></i> About us</a> <br>
+          <span><i class="glyphicon glyphicon-envelope"></i> 51304364@hcmut.edu.vn</span>
+          <br>
+          <span><i class="glyphicon glyphicon-phone"></i> 01225417247</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

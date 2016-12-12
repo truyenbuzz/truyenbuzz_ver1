@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <title>BK Truyện</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./style/index.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="jquery.twbsPagination.min.js"></script>
+  <script src="./data/covers.js"></script>
+  <script src="./javascript/index.js"></script>
+
+  <style type="text/css">
+    .navbar {
+      position: relative;
+
+    }
+    .author{
+      min-height: 350px;
+      background-color: orange;
+      margin-bottom: 10px;
+      padding-top: 30px;
+    }
+    
+    .InfoTG{
+      text-align: right;
+      font-size: 24px;
+      font-family: Courier;
+      padding-right: 20px;
+    }
+    .grad1{
+
+      background: orange;
+      background:-webkit-linear-gradient(left,rgba(255,223,191,0),rgba(255,143,32,1));
+      background: -o-linear-gradient(right,rgba(255,223,191,0),rgba(255,143,32,1));
+      background: -moz-linear-gradient(right,rgba(255,223,191,0),rgba(255,143,32,1));
+      background: linear-gradient(to top,rgba(255,223,191,0),rgba(255,143,32,1));
+    }
+    .Info{
+      font-size: 20px;
+      text-indent: 30px;
+      text-align: justify;
+      
+    }
+    .recmt-header {
+      text-align: left;
+      background-color: olive;
+      color:  white;
+      font-weight: bold;
+      font-size: 23px;
+      line-height: 60px;
+    }
+    .tacpham{
+    	padding: 0px;
+      text-align: center;
+    	background: white;
+      margin-top: 0;
+
+    }
+
+    .sub{
+      padding-top: 10px;
+    	
+    }
+  </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">BK Truyện</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html"><i class="glyphicon glyphicon-home nav-icon"></i>  Trang chủ</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-align-left nav-icon"></i>  Thể loại <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <!-- COVER'S GENRE DROPDOWN HERE-->
+              <li><a href="./genre.html?genre=KIEMHIEP">Kiếm hiệp</a></li>
+              <li><a href="./genre.html?genre=XUYENKHONG">Xuyên không</a></li>
+              <li><a href="./genre.html?genre=TIENHIEP">Tiên hiệp</a></li>
+              <li><a href="./genre.html?genre=NGONTINH">Ngôn tình</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search nav-icon nav-search-size"></span></a>
+            <ul class="dropdown-menu search-menu">
+              <li>
+                <form onsubmit="return searchStories();">
+                  <div class="search-form">
+                    <input type="text" id="search-input" name="search" placeholder="Truyện bạn muốn tìm">
+                    <input type="submit" class="btn btn-primary button-search" name="Search" value="Search">
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="col-md-12 grad1  author">
+        <div style="text-align: center; margin: 20px 0 20px;">
+          <img  class="img-circle" src="./cover-img/photo01.jpg" alt="no">
+        </div>
+        <div style="font-size:28px; font-weight: bold; color: black; text-align: center;">
+          GÀO
+        </div>
+        <p class="text-center" style="font-size:14px; color: black">@aaaaaa</p>
+        <ul style="font-size: 14px; color: black; text-align: center; padding: 0">
+          <li style="display: inline-block; padding-right: 5px">
+            3 <br>Tác Phẩm
+          </li>
+          <li style="display: inline-block; padding-left: 5px">100 <br>Người theo dõi</li>
+          <li style="display: inline-block; padding-left: 5px">210 <br>Lượt thích</li>
+        </ul>
+
+      </div>
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-9 col-sm-8 col-xs-8 test">
+        <header class= "main-header">Gào</header>
+
+
+        <p class="Info">Gào tên thật là Vũ Phương Thanh, cô sinh năm 08/07/1988, thuộc thế hệ những nhà văn cuối thời 8X, là cây bút trẻ đang được yêu thích hiện nay với những tác phẩm về tình yêu, gia đình. Với các tác phẩm nổi tiếng như: Nhật ký son môi...
+
+          <p class="Info">Gào là một trong những cây bút nổi tiếng nhất bằng con đường văn học mạng ở Việt Nam. Khởi đầu từ những truyện ngắn trên trang mạng Yahoo, 360 Blog cho đến những ấn bản được in ra thành sách. Những tác phẩm của cô đã mau chóng trở thành best-seller (sách bán chạy nhất) trong những năm gần đây như: Cho em gần anh thêm chút nữa (2009), Nhật kí son môi (2010), Tự sát (2011), Yêu anh bằng tất cả những gì em có, Mất anh bởi tất cả những thứ em cho…  Vào tháng 12/2012 vừa qua, cô đã cho ra mắt tác phẩm Kí ức Northumbria và nhận được sự hưởng ứng từ đông đảo người đọc.Gào là một trong những cây bút nổi tiếng nhất bằng con đường văn học mạng ở Việt Nam. Khởi đầu từ những truyện ngắn trên trang mạng Yahoo, 360 Blog cho đến những ấn bản được in ra thành sách. Những tác phẩm của cô đã mau chóng trở thành best-seller (sách bán chạy nhất) trong những năm gần đây như: Cho em gần anh thêm chút nữa (2009), Nhật kí son môi (2010), Tự sát (2011), Yêu anh bằng tất cả những gì em có, Mất anh bởi tất cả những thứ em cho…  Vào tháng 12/2012 vừa qua, cô đã cho ra mắt tác phẩm Kí ức Northumbria và nhận được sự hưởng ứng từ đông đảo người đọc.</p>
+
+          <p class="Info">Những tác phẩm của cô gây được hiệu ứng khá tốt trong giới trẻ. Mặc dù không ít ý kiến khen chê đối nghịch, nhưng Gào vẫn viết và số lượng fan của cô vẫn tăng lên không ngừng. Những truyện ngắn, tiểu thuyết của cô sử dụng ngôn từ giản dị, gần gũi nên dễ đi vào lòng người, nhất là đối với đối tượng tuổi teen. Trên trang facebook tác giả Gào có 575.000 lượt “like” và trong trang mạng xã hội cá nhân cô có hơn 100.000 người theo dõi.Những tác phẩm của cô gây được hiệu ứng khá tốt trong giới trẻ. Mặc dù không ít ý kiến khen chê đối nghịch, nhưng Gào vẫn viết và số lượng fan của cô vẫn tăng lên không ngừng. Những truyện ngắn, tiểu thuyết của cô sử dụng ngôn từ giản dị, gần gũi nên dễ đi vào lòng người, nhất là đối với đối tượng tuổi teen. Trên trang facebook tác giả Gào có 575.000 lượt “like” và trong trang mạng xã hội cá nhân cô có hơn 100.000 người theo dõi.</p>
+
+          <p class="Info">Gào không chỉ thành công trong con đường viết lách, cô còn từng là quản lý của nhóm nhạc 365, làm ngân hàng và hiện nay cô còn là chủ quán cafe.
+
+            Với các bạn trẻ, Gào không chỉ là một tác giả thành công, mà còn là một cô nàng có đầu óc kinh doanh và sức làm việc rất đáng nể.</p>
+
+
+
+          </div>
+
+          <div class="col-md-3 col-sm-4  col-xs-4 padding-right">
+            <div class="col-md-12 padding">
+              <div class="recmt-header">
+                <header >Truyện nổi bật</header>
+              </div>
+              
+               <ul class="tacpham">
+                <li class="sub">
+                 <a href="#">
+                   <img src="./cover-img/photo02.jpg" alt="">
+                 </a>
+               </li>
+
+               <li class="sub">
+                 <a href="#">
+                   <img src="./cover-img/photo03.jpg" alt="">
+                 </a>
+               </li>
+
+               <li class="sub">
+                 <a href="#">
+                   <img src="./cover-img/photo04.jpg" alt="">
+                 </a>
+               </li>
+             </ul>
+           
+         </div>
+       </div>
+
+
+
+     </div>
+
+   </div>
+<footer class="footer">
+ <div class="container">
+  <div class="row">
+   <div class="col-md-6">
+    <h3>Giới thiệu</h3>
+    <hr>
+    <span>BK Truyện là website đọc truyện convert online cập nhật liên tục và nhanh nhất các truyện tiên hiệp, kiếm hiệp, huyền ảo do các thành viên đóng góp, có nhiều truyện hay và nổi bật</span>
+  </div>
+  <div class="col-md-6">
+    <h3>Liên hệ</h3>
+    <hr>
+    <a href="about.html"><i class="glyphicon glyphicon-book"></i> About us</a> <br>
+    <span><i class="glyphicon glyphicon-envelope"></i> 51304364@hcmut.edu.vn</span>
+    <br>
+    <span><i class="glyphicon glyphicon-phone"></i> 01225417247</span>
+
+  </div>
+</div>
+</div>
+</footer>
+</body>
+</html>

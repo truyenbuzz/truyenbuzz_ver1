@@ -1,0 +1,47 @@
+#formcomment-section {
+    margin-top: 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+#form-comment {
+    margin-top: 10px;
+}
+
+#btn-cmt {
+    margin: 10px 0;
+    float: right;
+}
+
+#cmt-mess {
+    font-size: 15px;
+    color: red;
+}
+
+#sel1 {
+    width: 130px;
+    height: 25px;
+    margin: 10px 0;
+    background: #f2f2f2;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#comment-img {
+    width: 75px;
+    height: 75px;
+}
+
+#empty-cmt-mess {
+    display: block;
+    font-size: 18px;
+}
+
+#comment-user-img {
+    width:75px;
+    height:75px;
+}
+
+#cmt-user-img {
+    width:75px;
+    height:75px;
+}

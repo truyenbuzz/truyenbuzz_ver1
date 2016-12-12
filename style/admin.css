@@ -1,0 +1,208 @@
+body {margin:0; font-family: "Lato", sans-serif;}
+
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Float the list items side by side */
+ul.tab li {
+    float: left;
+    width: 33%;
+}
+
+/* Style the links inside the list items */
+
+ul.tab li a {
+    width: 100%;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+/* Change background color of links on hover */
+ul.tab li a:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background: white;
+}
+.th {
+  font-weight: bold;
+}
+/*.tb button {
+  outline: none;
+  border: none;
+  background: #f1f1f1;
+}
+.tb button:hover {
+  color: #bf0f00;
+}*/
+
+.up-cover {
+    text-align: center;
+}
+.up-cover figcaption {
+  font-size: 16px;
+  font-weight: bold;
+}
+.up-cover img {
+  width: 300px;
+  height: 500px;
+
+}
+
+.overlay {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.7);
+    color: white;
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 5%;
+    width: 100%;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 0;
+    right: 45px;
+    font-size: 60px;
+}
+
+.edit-cover {
+    text-align: center;
+}
+
+#edit-id {
+    display: none;
+}
+
+#edit-previewHolder {
+    width:200px;
+    height:200px;
+    margin-bottom:10px;
+    border-style:inset;
+    border:2px solid #a6a6a6;
+    border-radius: 5px;
+}
+
+#edit-image {
+    display: none;
+}
+
+.form-border {
+    border: 1px solid #e8e8e8;
+    border-radius: 5px;
+}
+
+.edit-title-label {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.edit-genre-label {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+#edit-genre {
+    display:inline-block;
+    width: 180px;
+    height: 28px;
+    font-size: 14px;
+    color: black;
+}
+
+.edit-submit-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#previewHolder {
+    width:200px;
+    height:200px;
+    margin-bottom:10px;
+    border-style:inset;
+    border:2px solid #a6a6a6;
+    border-radius: 5px;
+}
+
+#uploadImage {
+    display: none;
+}
+
+#up-genre {
+    display:inline-block;
+    width: 180px;
+    height: 28px;
+    font-size: 14px;
+}
+#addChap {
+  color: #d9d9d9;
+  font-size: 14px;
+}
+#addChap:hover {
+  text-decoration: underline;
+  color: blue;
+}
+#admin-listChap {
+  list-style: none;
+  display: inline-block;
+}
+#admin-listChap li {
+  display: inline-block;
+}
+.hideoption {
+    display: none;
+    visibility: hidden;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}

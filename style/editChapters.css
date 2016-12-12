@@ -1,0 +1,36 @@
+.navbar {
+  position: relative;
+}
+body {
+  background: white;
+}
+#editchap-story-title {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 20px;
+}
+#editchap-name {
+  font-size: 18px;
+  text-align: center;
+}
+#editchap-input {
+  width: 25%;
+	height: 40px;
+	border: 0;
+	font-size: 20px;
+	border-bottom: 1px solid #bfbfbf;
+}
+#editchap-body {
+  margin-top: 20px;
+}
+#editchap-body textarea {
+  border:none;
+  font-size: 20px;
+}
+#editchap-submit {
+  text-align: center;
+}
+#editchap-submit input {
+  font-size: 20px;
+  margin-bottom: 20px;
+}

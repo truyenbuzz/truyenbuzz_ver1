@@ -1,0 +1,26 @@
+.hint-img2 {
+  padding-top: 10px;
+}
+
+.hint-img {
+  max-width: 120px;
+  max-height: 100px;
+}
+
+.hint-title {
+  font-weight: bold;
+}
+
+.hint-form {
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.2);
+}
+.hint-row {
+  border: 1px solid #e8e8e8;
+
+}
+.hint-row:hover {
+  background: #f2f2f2;
+}
+.hint_data {
+    background-color: white;
+}

@@ -1,0 +1,75 @@
+.navbar {
+  position: relative;
+}
+.dropdown-menu {
+  border-radius: 5px;
+}
+
+div {
+  display: block;
+}
+
+.link {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  list-style: none;
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}
+
+.link > li {
+  display: inline-block;
+}
+
+.active {
+  color: #777;
+}
+
+header {
+  text-align: center;
+}
+
+p {
+  display: block;
+}
+
+.last-body {
+  text-align: center;
+}
+
+.chap-name {
+  text-align: center;
+  display: block;
+  font-size: 18px;
+}
+
+.pagination {
+  margin: 5px 0;
+  display: inline-block;
+}
+
+.pagination > li {
+  display: inline;
+}
+
+
+
+.icon {
+  font-size: large;
+  color: blue;
+}
+
+/*pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  font-size: 20px;
+}*/
+.chap-content {
+  display: block;
+  font-size: 22px;
+}
+
+.not-active {
+  pointer-events: none;
+}

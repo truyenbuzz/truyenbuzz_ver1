@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <title>BK Truyện</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="./style/index.css">
+    <link rel="stylesheet" type="text/css" href="./style/hint.css">
+    <link rel="stylesheet" type="text/css" href="style/login.css">
+
+    <script src="lib/jquery/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <script src="./jquery-cookie/jquery.cookie.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <script src="jquery.twbsPagination.min.js"></script>
+    <script src="./data/covers.js"></script>
+
+    <script src="./javascript/hint.js"></script>
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/login.js"></script>
+    <script src="./javascript/register.js"></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BK Truyện</a>
+            </div>
+            <!--BK Truyen-->
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <!--Begin Menu DropDown-->
+                <ul class="nav navbar-nav">
+                    <!--Left Menu Dropdown -->
+                    <li><a href="index.html"><i class="glyphicon glyphicon-home nav-icon"></i>  Trang chủ</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-align-left nav-icon"></i>  Thể loại <span class="caret"></span></a>
+                        <ul class="dropdown-menu genre-menu">
+                            <!-- COVER'S GENRE DROPDOWN HERE-->
+                        </ul>
+                    </li>
+                </ul>
+                <!--End Left Menu Dropdown -->
+
+                <ul class="nav navbar-nav navbar-right">
+                    <!--Right Menu -->
+                    <li>
+                        <form id="signin" class="navbar-form navbar-right"   method="post" onsubmit="return handleSubmit();">
+                            <div class="input-group">
+                                <span id="login-mess" class="input-group"></span>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input id="loginName" type="text" class="form-control" name="email" value="" placeholder="Nhập email" required>
+                            </div>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input id="password" type="password" class="form-control" name="password" value="" placeholder="Nhập mật khẩu" required>
+                            </div>
+
+                            <input type="submit" class="btn btn-primary login-submit" value="Đăng nhập">
+                        </form>
+                    </li>
+
+                    <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-search nav-icon nav-search-size"></span></a>
+                        <ul class="dropdown-menu search-menu">
+                            <li>
+                                <form onsubmit="return searchStories();">
+                                    <div class="search-form">
+                                        <input type="text" id="search-input" name="search" placeholder="Truyện bạn muốn tìm" onkeyup="showHint(replaceStr(this.value))">
+                                        <input type="submit" class="btn btn-primary button-search" name="Search" value="Search">
+                                    </div>
+
+                                    <div class="hint-form">
+                                        <div class="row hint_data">
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!--End Right Menu-->
+            </div>
+            <!--End MyNavBar-->
+        </div>
+        <!--End container-fluid-->
+    </nav>
+    <!--End navbar-->
+
+    <div class="container-fluid">
+        <section class="container">
+            <div class="container-page">
+                <div class="col-md-6">
+                    <h2 class="dark-grey">Đăng ký</h2>
+                    <form id="register"  method="post" onsubmit="return handleRegister();">
+                        <div class="form-group">
+                            <label>Tên đại diện*</label>
+                            <input type="text"  class="form-control" id="regis-username" value="" placeholder="Tên từ 2-30 kí tự" required>
+                            <span id="errorUser"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mật khẩu*</label>
+                            <input type="password" class="form-control" id="regis-pass" value="" placeholder="Nhập mật khẩu" required>
+                            <span id="errorPass"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Nhập lại mật khẩu*</label>
+                            <input type="password" class="form-control" id="regis-repass" placeholder="Nhập lại mật khẩu" value="" required>
+                            <span id="errorRepass"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" class="form-control" id="regis-email" value="" placeholder="Email có dạng abc@abc.com" required>
+                            <span id="errorEmail"></span>
+                        </div>
+
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Xác nhận">
+                        </div>
+                    </form>
+
+                    <div class="col-md-12">
+                        <span id="regis-mess"></span>
+                    </div>
+
+                </div>
+
+                <div class="col-md-6">
+                  <h3 class="dark-grey">Quy định và Nội quy</h3>
+                  <p>
+                      Việc đăng ký thành viên là hoàn toàn MIỄN PHÍ! Chúng tôi xin nhấn mạnh rằng bạn phải tuân theo những quy định dưới đây. Nếu bạn đồng ý với quy định xin hãy ấn vào nút 'Xác nhận' dưới đây để hoàn tất đăng ký.
+                  </p>
+                  <p>
+                      Mặc dù Ban quản trị của BK Truyện sẽ cố gắng loại bỏ những bài viết không đúng nội quy khỏi trang, chúng tôi không thể duyệt hết nội dung tất cả các bài viết. Tất cả bài viết là quan điểm của tác giả, và không phải sở hữu của BK Truyện, tác giả phải chịu trách nhiệm pháp lý liên quan đến bài viết của mình.
+                  </p>
+                  <p>
+                      Đồng ý với những quy định này, bạn phải cam kết rằng sẽ không gửi bất kỳ bài viết nào mang tính khiêu dâm, thô tục, gây hiềm khích, đe dọa hoặc các vấn đề khác mà không tuân theo quy định của pháp luật Việt Nam.
+                  </p>
+                  <p>
+                      Ban quản trị của BK Truyện có quyền được xóa, sửa, di chuyển hoặc đóng bất kỳ nội dung nào trong trang với bất kỳ lý do nào.
+                  </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
